@@ -36,3 +36,14 @@ def wczytaj_json(nazwa_pliku):
 dane = wczytaj_json('file.json')
 if dane:
     print(dane)
+
+
+
+
+
+    def zapisz_json(nazwa_pliku, dane):
+    try:
+        with open(nazwa_pliku, 'w', encoding='utf-8') as plik:
+            json.dump(dane, plik, ensure_ascii=False, indent=4)
+    except IOError as e:
+        print(f"Błąd zapisu do pliku '{nazwa_pliku}': {e}")
