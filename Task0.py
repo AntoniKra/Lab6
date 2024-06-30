@@ -1,16 +1,11 @@
 import argparse
 
-def main():
-    parser = argparse.ArgumentParser(description="Program do konwersji danych")
-    parser.add_argument('input_file', type=str, help='Ścieżka do pliku wejściowego')
-    parser.add_argument('output_file', type=str, help='Ścieżka do pliku wyjściowego')
-    args = parser.parse_args()
-
-    input_file = args.input_file
-    output_file = args.output_file
-
-    print(f'Plik wejściowy: {input_file}')
-    print(f'Plik wyjściowy: {output_file}')
+def parsuj_argumenty():
+    parser = argparse.ArgumentParser(description='Opis programu')
+    parser.add_argument('plik_wejscie', type=str, help='Ścieżka do pliku wejściowego')
+    parser.add_argument('plik_wyjscie', type=str, help='Ścieżka do pliku wyjściowego')
+    return parser.parse_args()
 
 if __name__ == "__main__":
-    main()
+    args = parsuj_argumenty()
+    print(f'Plik wejściowy: {args.plik_wejscie}, Plik wyjściowy: {args.plik_wyjscie}')
